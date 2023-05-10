@@ -1,0 +1,90 @@
+[
+	{
+		"id": "1",
+		"name": "Starbucks",
+		"logo": "../icons/Starbucks.webp",
+		"type": "Kampanya",
+		"description": "Text",
+		"goal": "4",
+		"totalGoal": "12",
+		"subscribe": true,
+		"like": true
+	},
+	{
+		"id": "2",
+		"name": "Kahve Dünyası",
+		"logo": "../icons/kahve-dunyasi.webp",
+		"type": "Kampanya",
+		"description": "Text",
+		"goal": "6",
+		"totalGoal": "12",
+		"subscribe": true,
+		"like": true
+	},
+	{
+		"id": "3",
+		"name": "Coffee Vintage",
+		"logo": "../icons/coffeeshopvintage.webp",
+		"type": "Kampanya",
+		"description": "Text",
+		"goal": "0",
+		"totalGoal": "10",
+		"subscribe": false,
+		"like": false
+	},
+	{
+		"id": "4",
+		"name": "Fincan Kafe",
+		"logo": "../icons/fincankafe.webp",
+		"type": "Kampanya",
+		"description": "Text",
+		"goal": "2",
+		"totalGoal": "8",
+		"subscribe": true,
+		"like": false
+	},
+	{
+		"id": "5",
+		"name": "Moda Waffle & Kafe",
+		"logo": "../icons/modakafewaffle.webp",
+		"type": "Kampanya",
+		"description": "Text",
+		"goal": "0",
+		"totalGoal": "12",
+		"subscribe": false,
+		"like": false
+	},
+	{
+		"id": "6",
+		"name": "Moda Kafe",
+		"logo": "../icons/modakafe.webp",
+		"type": "Kampanya",
+		"description": "Text",
+		"goal": "4",
+		"totalGoal": "12",
+		"subscribe": true,
+		"like": false
+	},
+	{
+		"id": "7",
+		"name": "Rodopi Kahve",
+		"logo": "../icons/rodopikahve.webp",
+		"type": "Kampanya",
+		"description": "Text",
+		"goal": "1",
+		"totalGoal": "10",
+		"subscribe": true,
+		"like": false
+	},
+	{
+		"id": "8",
+		"name": "Coffee Shop",
+		"logo": "../icons/coffeeshop.webp",
+		"type": "Kampanya",
+		"description": "Text",
+		"goal": "0",
+		"totalGoal": "8",
+		"subscribe": false,
+		"like": false
+	}
+]
