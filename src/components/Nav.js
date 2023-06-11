@@ -46,17 +46,17 @@ const Nav = () => {
 								)}
 							</li>
 						))}
-						<div className={user ? 'hidden' : 'flex'}>
+						<li className={user ? 'hidden' : 'flex'}>
 							<Link to={'/login'}>
 								<Button>Giriş Yap</Button>
 							</Link>
 							<Link to={'/register'}>
 								<Button>Kayıt Ol</Button>
 							</Link>
-						</div>
-						<div className='bg-transparent flex text-white font-[Poppins] py-2 px-6 rounded md:ml-8 hover:bg-transparent duration-500'>
+						</li>
+						<li className='bg-transparent flex text-white font-[Poppins] py-2 px-6 rounded md:ml-8 hover:bg-transparent duration-500'>
 							<Theme />
-						</div>
+						</li>
 					</ul>
 				</div>
 			</div>
