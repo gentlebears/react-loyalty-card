@@ -1,41 +1,51 @@
-import { register } from '../firebase';
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { register } from "../firebase";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 // import { auth } from '../firebase';
 
 export default function Register() {
 	const navigate = useNavigate();
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const { user } = await register(email, password);
 	};
 
-	const hideshow = localStorage.getItem('user');
+	const hideshow = localStorage.getItem("user");
 	useEffect(() => {
-		if (hideshow) navigate('/profile');
+		if (hideshow) navigate("/profile");
 	});
 
 	if (!hideshow) {
 		// console.log(auth.emulatorConfig);
 		// console.log(authUser);
 		return (
-			<div className='max-w-7xl my-auto mx-auto px-5'>
-				<div className='w-full h-screen2 flex justify-center items-center'>
+			<motion.div
+				initial={{ opacity: 0, translateY: 25 }}
+				animate={{ opacity: 1, translateY: 0 }}
+				className="max-w-7xl my-auto mx-auto px-5"
+			>
+				<div className="w-full h-screen2 flex justify-center items-center">
 					{/* BANNER */}
-					<div className='flex items-center h-cheight w-cspacing rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)]'>
+					<div className="flex items-center h-cheight w-cspacing rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)]">
 						{/* 1 Div */}
-						<div className='hidden bg-web-theme-color text-orange-50 xl:flex lg:flex md:flex sm:flex flex-col justify-center items-center w-2/5 h-full rounded-l-3xl py-2 px-5 shadow-[0px_0px_5px_0px_0px_5px_rgba(96,56,19,0.9)]'>
-							<h2 className='text-center mb-7 mx-1 text-3xl font-bold md:text-3xl lg:text-5xl'>Zaten Bir Hesabınız Var mı?</h2>
-							<p className='text-center mb-11 mx-4 text-sm font-normal md:text-base lg:text-2xl'>Oturumunuzu açın ve çok sayıda yeni fırsatı keşfedin!</p>
+						<div className="hidden bg-web-theme-color text-orange-50 xl:flex lg:flex md:flex sm:flex flex-col justify-center items-center w-2/5 h-full rounded-l-3xl py-2 px-5 shadow-[0px_0px_5px_0px_0px_5px_rgba(96,56,19,0.9)]">
+							<h2 className="text-center mb-7 mx-1 text-3xl font-bold md:text-3xl lg:text-5xl">
+								Zaten Bir Hesabınız Var mı?
+							</h2>
+							<p className="text-center mb-11 mx-4 text-sm font-normal md:text-base lg:text-2xl">
+								Oturumunuzu açın ve çok sayıda yeni fırsatı
+								keşfedin!
+							</p>
 							<button
-								type='submit'
-								className='inline-flex disabled:opacity-60 cursor-pointer items-center px-4 py-2 border-2 text-sm font-medium rounded-md shadow-sm text-loy1 bg-white hover:bg-loy1 hover:border-white hover:text-white focus:outline-none focus-ring-2 focus ring-offset-2 focus:bg-orange-900 transition-colors border-loy1 '
+								type="submit"
+								className="inline-flex disabled:opacity-60 cursor-pointer items-center px-4 py-2 border-2 text-sm font-medium rounded-md shadow-sm text-loy1 bg-white hover:bg-loy1 hover:border-white hover:text-white focus:outline-none focus-ring-2 focus ring-offset-2 focus:bg-orange-900 transition-colors border-loy1 "
 								onClick={(e) => {
 									e.preventDefault();
-									navigate('/login');
+									navigate("/login");
 								}}
 							>
 								Giriş Yap
@@ -45,69 +55,106 @@ export default function Register() {
 						{/* FORM */}
 						{/* <form className='max-w-xl mx-auto grid gap-y-4 py-4' onSubmit={handleSubmit}> */}
 						{/* 2 Div */}
-						<div className='flex flex-col justify-center items-center h-full w-full xl:w-3/5 lg:w-3/5 md:w-3/5 sm:w-3/5 rounded-r-3xl px-5 py-0 text-loy1'>
+						<div className="flex flex-col justify-center items-center h-full w-full xl:w-3/5 lg:w-3/5 md:w-3/5 sm:w-3/5 rounded-r-3xl px-5 py-0 text-loy1">
 							<form onSubmit={handleSubmit}>
-								<h2 className='text-center font-bold text-4xl lg:text-5xl md:text-3xl lg:font-extrabold'>Hesap Oluşturun</h2>
+								<h2 className="text-center font-bold text-4xl lg:text-5xl md:text-3xl lg:font-extrabold">
+									Hesap Oluşturun
+								</h2>
 								{/* SOCIAL BUTTONS */}
-								<div className='flex flex-col justify-center items-center mt-8 md:mt-2 lg:mt-2'>
-									<p className='text-lg mb-4 md:mb-1 font-semibold'>Sosyal ağlar ile kayıt olun</p>
-									<div className='flex justify-center items-center'>
-										<button type='submit' name='Google' className='flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1'>
-											<i className='fa-brands fa-google'></i>
+								<div className="flex flex-col justify-center items-center mt-8 md:mt-2 lg:mt-2">
+									<p className="text-lg mb-4 md:mb-1 font-semibold">
+										Sosyal ağlar ile kayıt olun
+									</p>
+									<div className="flex justify-center items-center">
+										<button
+											type="submit"
+											name="Google"
+											className="flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1"
+										>
+											<i className="fa-brands fa-google"></i>
 										</button>
-										<button type='button' name='Facebook' className='flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1'>
-											<i className='fab fa-facebook-f'></i>
+										<button
+											type="button"
+											name="Facebook"
+											className="flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1"
+										>
+											<i className="fab fa-facebook-f"></i>
 										</button>
-										<button name='Twitter' className='flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1'>
-											<i className='fa-brands fa-twitter'></i>
+										<button
+											name="Twitter"
+											className="flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1"
+										>
+											<i className="fa-brands fa-twitter"></i>
 										</button>
 									</div>
 								</div>
 
 								{/* SEPERATOR */}
-								<div className='flex justify-center items-center w-full my-0 mx-auto'>
-									<div className='w-2/5 h-px bg-loy1 my-0 mx-5'></div>
+								<div className="flex justify-center items-center w-full my-0 mx-auto">
+									<div className="w-2/5 h-px bg-loy1 my-0 mx-5"></div>
 									<p>or</p>
-									<div className='w-2/5 h-px bg-loy1 my-0 mx-5'></div>
+									<div className="w-2/5 h-px bg-loy1 my-0 mx-5"></div>
 								</div>
 
 								<div>
-									<label className='text-left block text-sm font-medium text-toy1 md:text-xs'>E-Mail</label>
-									<div className='mt-1'>
-										<input type='email' name='email' className='shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md' placeholder='you@example.com' value={email} onChange={(e) => setEmail(e.target.value)} />
+									<label className="text-left block text-sm font-medium text-toy1 md:text-xs">
+										E-Mail
+									</label>
+									<div className="mt-1">
+										<input
+											type="email"
+											name="email"
+											className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+											placeholder="you@example.com"
+											value={email}
+											onChange={(e) =>
+												setEmail(e.target.value)
+											}
+										/>
 									</div>
 								</div>
 								<div>
-									<label className='text-left block text-sm font-medium text-toy1 md:text-xs'>Password</label>
-									<div className='mt-1'>
-										<input type='password' autoComplete='on' className='shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+									<label className="text-left block text-sm font-medium text-toy1 md:text-xs">
+										Password
+									</label>
+									<div className="mt-1">
+										<input
+											type="password"
+											autoComplete="on"
+											className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+											placeholder="Password"
+											value={password}
+											onChange={(e) =>
+												setPassword(e.target.value)
+											}
+										/>
 									</div>
 								</div>
 
-								<div className='text-left h-auto md:text-center flex flex-row w-full'>
-									<div className='w-2/4 text-left sm:hidden md:hidden lg:hidden'>
+								<div className="text-left h-auto md:text-center flex flex-row w-full">
+									<div className="w-2/4 text-left sm:hidden md:hidden lg:hidden">
 										<button
 											onClick={(e) => {
 												e.preventDefault();
-												navigate('/login');
+												navigate("/login");
 											}}
-											className='inline-flex disabled:opacity-60 cursor-pointer items-center my-3 px-4 py-2 border-2 text-sm border-loy1  rounded-md shadow-sm text-white bg-loy1 hover:text-loy1 hover:bg-white hover:border-loy1 focus:outline-none focus-ring-2 z-[-1] focus ring-offset-2 focus:ring-orange-500 transition-colors'
-											type='submit'
+											className="inline-flex disabled:opacity-60 cursor-pointer items-center my-3 px-4 py-2 border-2 text-sm border-loy1  rounded-md shadow-sm text-white bg-loy1 hover:text-loy1 hover:bg-white hover:border-loy1 focus:outline-none focus-ring-2 z-[-1] focus ring-offset-2 focus:ring-orange-500 transition-colors"
+											type="submit"
 										>
 											Oturum Aç
 										</button>
 									</div>
-									<div className='w-2/4 sm:w-full sm:text-center md:w-full md:text-center lg:w-full lg:text-center text-right'>
+									<div className="w-2/4 sm:w-full sm:text-center md:w-full md:text-center lg:w-full lg:text-center text-right">
 										<button
 											onClick={(e) => {
 												handleSubmit();
 												if (e.target.checked) {
-													navigate('/');
+													navigate("/");
 												}
 											}}
 											disabled={!email || !password}
-											className='inline-flex disabled:opacity-60 cursor-pointer items-center my-3 px-4 py-2 border-2 text-sm border-loy1 rounded-md shadow-sm text-white bg-loy1 hover:text-loy1 hover:bg-white hover:border-loy1 focus:outline-none focus-ring-2 z-[-1] focus ring-offset-2 focus:ring-orange-500 transition-colors'
-											type='submit'
+											className="inline-flex disabled:opacity-60 cursor-pointer items-center my-3 px-4 py-2 border-2 text-sm border-loy1 rounded-md shadow-sm text-white bg-loy1 hover:text-loy1 hover:bg-white hover:border-loy1 focus:outline-none focus-ring-2 z-[-1] focus ring-offset-2 focus:ring-orange-500 transition-colors"
+											type="submit"
 										>
 											Kayıt Ol
 										</button>
@@ -117,8 +164,13 @@ export default function Register() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		);
 	}
-	return <div className='text-2xl font-semibold m-auto'> Bir şeyler ters gitti. Sayfayı yenileyin!</div>;
+	return (
+		<div className="text-2xl font-semibold m-auto">
+			{" "}
+			Bir şeyler ters gitti. Sayfayı yenileyin!
+		</div>
+	);
 }

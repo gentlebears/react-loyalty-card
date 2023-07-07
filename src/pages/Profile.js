@@ -1,14 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { logout, auth as emailAuth, deleteTodo, emailVerification, addTodo } from '../firebase';
-import { logout as logoutHandle } from '../store/auth';
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { modal } from '../utils';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+	logout,
+	auth as emailAuth,
+	deleteTodo,
+	emailVerification,
+	addTodo,
+} from "../firebase";
+import { logout as logoutHandle } from "../store/auth";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { modal } from "../utils";
+import { motion } from "framer-motion";
 
 // AUTO ANIMATE
-import { useAutoAnimate } from '@formkit/auto-animate/react';
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 const Profile = () => {
 	const navigate = useNavigate();
@@ -17,7 +24,7 @@ const Profile = () => {
 	const { todos } = useSelector((state) => state.todos);
 	const [animationParent] = useAutoAnimate();
 
-	const [todo, setTodo] = useState('');
+	const [todo, setTodo] = useState("");
 
 	const submitHandle = async (e) => {
 		e.preventDefault();
@@ -25,7 +32,7 @@ const Profile = () => {
 			todo,
 			uid: user.uid,
 		});
-		setTodo('');
+		setTodo("");
 	};
 
 	const handleDelete = async (id) => {
@@ -35,7 +42,7 @@ const Profile = () => {
 	const handleLogout = async () => {
 		await logout();
 		dispatch(logoutHandle());
-		navigate('/login', {
+		navigate("/login", {
 			replace: true,
 		});
 		window.location.reload(false);
@@ -55,7 +62,7 @@ const Profile = () => {
 	};
 	// const hideshow = localStorage.getItem('user');
 	useEffect(() => {
-		if (!user) navigate('/');
+		if (!user) navigate("/");
 	});
 
 	if (user) {
@@ -67,64 +74,108 @@ const Profile = () => {
 
 			// <div className='max-w-5xl h-screen2 self-center items-center mx-auto grid gap-y-px py-4 px-5 '>
 			// 	<div className='container p-10 rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)]'>
-			<div className='my-auto'>
-				<div className='px-5  py-4 pb-24 lg:pb-4 md:pb-4 sm:pb-4 self-center items-center'>
-					<div className='max-w-5xl px-5 pt-5 md:pt-16 lg:pt-20 pb-5 mx-auto rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)]'>
-						<div className='flex w-full gap-x-4 items-center self-center content-center'>
-							<div className='flex w-full p-1 border bg-gray-100 border-gray-200 rounded-full'>
+			<motion.div
+				initial={{ opacity: 0, translateY: 25 }}
+				animate={{ opacity: 1, translateY: 0 }}
+				className="my-auto"
+			>
+				<div className="px-5  py-4 pb-24 lg:pb-4 md:pb-4 sm:pb-4 self-center items-center">
+					<div className="max-w-5xl px-5 pt-5 md:pt-16 lg:pt-20 pb-5 mx-auto rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)]">
+						<div className="flex w-full gap-x-4 items-center self-center content-center">
+							<div className="flex w-full p-1 border bg-gray-100 border-gray-200 rounded-full">
 								{/* PHOTO */}
-								<img src={user.photoURL ? user.photoURL : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} className='w-24 h-24 shadow-lg rounded-full' />
+								<img
+									src={
+										user.photoURL
+											? user.photoURL
+											: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+									}
+									className="w-24 h-24 shadow-lg rounded-full"
+								/>
 								{/* TEXT */}
-								<div className='flex-row font-buttonfont mr-auto ml-5 content-center self-center'>
-									<div className=''>{user.displayName}</div>
-									<div className='text-xs text-gray-400'>User</div>
+								<div className="flex-row font-buttonfont mr-auto ml-5 content-center self-center">
+									<div className="">{user.displayName}</div>
+									<div className="text-xs text-gray-400">
+										User
+									</div>
 									<div>
-										<button onClick={handleLogout} className='text-xs text-red-400 bg-transparent'>
+										<button
+											onClick={handleLogout}
+											className="text-xs text-red-400 bg-transparent"
+										>
 											Çıkıp yap
 										</button>
 									</div>
 								</div>
 								{/* BUTON */}
-								<div className='flex gap-x-1 sm:gap-x-5 font-buttonfont ml-auto mr-5 sm:mr-5 content-center self-center text-right text-gray-600'>
-									<div className='hidden sm:block'>
-										<Link to='/settings' className='flex mx-auto content-center self-center text-4xl'>
-											<ion-icon name='settings-outline'></ion-icon>
+								<div className="flex gap-x-1 sm:gap-x-5 font-buttonfont ml-auto mr-5 sm:mr-5 content-center self-center text-right text-gray-600">
+									<div className="hidden sm:block">
+										<Link
+											to="/settings"
+											className="flex mx-auto content-center self-center text-4xl"
+										>
+											<ion-icon name="settings-outline"></ion-icon>
 										</Link>
 									</div>
 									<div>
 										{/* user verisi return edilmeden çekilmiyor bunun yerine auth çekildi - güvenlik açısından tekrar incele! */}
-										{!emailAuth.currentUser.emailVerified && (
-											<button onClick={handleVerification} className='flex mx-auto content-center self-center text-3xl sm:text-4xl'>
-												<ion-icon name='mail-unread-outline'></ion-icon>
+										{!emailAuth.currentUser
+											.emailVerified && (
+											<button
+												onClick={handleVerification}
+												className="flex mx-auto content-center self-center text-3xl sm:text-4xl"
+											>
+												<ion-icon name="mail-unread-outline"></ion-icon>
 											</button>
 										)}
 									</div>
 									<div>
-										<button onClick={handleLogout} className='flex mx-auto content-center self-center text-3xl sm:text-4xl'>
-											<ion-icon name='log-out-outline'></ion-icon>
+										<button
+											onClick={handleLogout}
+											className="flex mx-auto content-center self-center text-3xl sm:text-4xl"
+										>
+											<ion-icon name="log-out-outline"></ion-icon>
 										</button>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<form className='flex gap-x-4 mt-4' onSubmit={submitHandle}>
-							<input onChange={(e) => setTodo(e.target.value)} value={todo} className='shadow-sm focus:ring-loy1 focus:border-loy1 block w-full sm:text-sm border-gray-300 rounded-md' type='text' placeholder='Not' />
-							<button disabled={!todo} className='inline-flex disabled:opacity-60 cursor-pointer items-center px-4 py-2 border-2 text-sm font-medium rounded-md shadow-sm text-white border-loy1 bg-loy1 hover:bg-white hover:text-loy1 transition-colors duration-200 focus:outline-none focus-ring-2 focus ring-offset-2 focus:ring-loy1'>
+						<form
+							className="flex gap-x-4 mt-4"
+							onSubmit={submitHandle}
+						>
+							<input
+								onChange={(e) => setTodo(e.target.value)}
+								value={todo}
+								className="shadow-sm focus:ring-loy1 focus:border-loy1 block w-full sm:text-sm border-gray-300 rounded-md"
+								type="text"
+								placeholder="Not"
+							/>
+							<button
+								disabled={!todo}
+								className="inline-flex disabled:opacity-60 cursor-pointer items-center px-4 py-2 border-2 text-sm font-medium rounded-md shadow-sm text-white border-loy1 bg-loy1 hover:bg-white hover:text-loy1 transition-colors duration-200 focus:outline-none focus-ring-2 focus ring-offset-2 focus:ring-loy1"
+							>
 								Ekle
 							</button>
 						</form>
 
-						<ul ref={animationParent} className='mt-4 flex flex-col gap-y-2'>
+						<ul
+							ref={animationParent}
+							className="mt-4 flex flex-col gap-y-2"
+						>
 							{todos.map((todo) => (
-								<li key={todo.id} className='p-4 flex justify-between items-center rounded bg-orange-50 text-sm text-loy1'>
+								<li
+									key={todo.id}
+									className="p-4 flex justify-between items-center rounded bg-orange-50 text-sm text-loy1"
+								>
 									{todo.todo}
-									<div className='flex gap-x-2'>
+									<div className="flex gap-x-2">
 										<button
 											onClick={() => {
-												modal('edit-todo-modal', todo);
+												modal("edit-todo-modal", todo);
 											}}
-											className='h-7 rounded px-3 text-xs border-2 border-loy1 bg-loy1 text-white hover:bg-white hover:text-loy1 transition-colors duration-200'
+											className="h-7 rounded px-3 text-xs border-2 border-loy1 bg-loy1 text-white hover:bg-white hover:text-loy1 transition-colors duration-200"
 										>
 											Düzenle
 										</button>
@@ -132,18 +183,22 @@ const Profile = () => {
 											onClick={() => {
 												handleDelete(todo.id);
 											}}
-											className='h-7 rounded px-3 text-xs border-2 border-loy1 bg-loy1 text-white hover:bg-white hover:text-loy1 transition-colors duration-200'
+											className="h-7 rounded px-3 text-xs border-2 border-loy1 bg-loy1 text-white hover:bg-white hover:text-loy1 transition-colors duration-200"
 										>
 											Sil
 										</button>
 									</div>
 								</li>
 							))}
-							{todos.length === 0 && <li className='p-4 flex justify-between items-center rounded bg-red-50 text-sm text-red-700'>Hiç not eklemedin</li>}
+							{todos.length === 0 && (
+								<li className="p-4 flex justify-between items-center rounded bg-red-50 text-sm text-red-700">
+									Hiç not eklemedin
+								</li>
+							)}
 						</ul>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		);
 	}
 };
