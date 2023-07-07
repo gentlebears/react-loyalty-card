@@ -11,7 +11,8 @@ export default function Register() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const { user } = await register(email, password);
+		// const { user } = await register(email, password);
+		await register(email, password);
 	};
 
 	const hideshow = localStorage.getItem("user");
