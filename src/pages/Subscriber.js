@@ -76,7 +76,7 @@ export default function Subscriber() {
 														<div className="text-red-300 w-1/2 font-normal border border-y-transparent border-l-transparent">
 															{brand.goal}
 														</div>
-														<div className="text-emerald-300 w-1/2 font-bold">
+														<div className="text-emerald-700 w-1/2 font-bold">
 															{brand.totalGoal}
 														</div>
 													</div>

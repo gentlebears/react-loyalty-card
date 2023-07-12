@@ -42,6 +42,7 @@ export default function Register() {
 								keşfedin!
 							</p>
 							<button
+								name="loginaccount"
 								type="submit"
 								className="inline-flex disabled:opacity-60 cursor-pointer items-center px-4 py-2 border-2 text-sm font-medium rounded-md shadow-sm text-loy1 bg-white hover:bg-loy1 hover:border-white hover:text-white focus:outline-none focus-ring-2 focus ring-offset-2 focus:bg-orange-900 transition-colors border-loy1 "
 								onClick={(e) => {
@@ -57,7 +58,7 @@ export default function Register() {
 						{/* <form className='max-w-xl mx-auto grid gap-y-4 py-4' onSubmit={handleSubmit}> */}
 						{/* 2 Div */}
 						<div className="flex flex-col justify-center items-center h-full w-full xl:w-3/5 lg:w-3/5 md:w-3/5 sm:w-3/5 rounded-r-3xl px-5 py-0 text-loy1">
-							<form onSubmit={handleSubmit}>
+							<form id="form" name="form" onSubmit={handleSubmit}>
 								<h2 className="text-center font-bold text-4xl lg:text-5xl md:text-3xl lg:font-extrabold">
 									Hesap Oluşturun
 								</h2>
@@ -69,19 +70,26 @@ export default function Register() {
 									<div className="flex justify-center items-center">
 										<button
 											type="submit"
+											aria-label="google"
+											id="google"
 											name="Google"
 											className="flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1"
 										>
 											<i className="fa-brands fa-google"></i>
 										</button>
 										<button
-											type="button"
+											type="submit"
+											aria-label="facebook"
+											id="facebook"
 											name="Facebook"
 											className="flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1"
 										>
 											<i className="fab fa-facebook-f"></i>
 										</button>
 										<button
+											type="submit"
+											aria-label="twitter"
+											id="twitter"
 											name="Twitter"
 											className="flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1"
 										>
@@ -105,6 +113,7 @@ export default function Register() {
 										<input
 											type="email"
 											name="email"
+											autoComplete="on"
 											className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
 											placeholder="you@example.com"
 											value={email}
@@ -135,6 +144,7 @@ export default function Register() {
 								<div className="text-left h-auto md:text-center flex flex-row w-full">
 									<div className="w-2/4 text-left sm:hidden md:hidden lg:hidden">
 										<button
+											name="openaccount"
 											onClick={(e) => {
 												e.preventDefault();
 												navigate("/login");
@@ -147,6 +157,7 @@ export default function Register() {
 									</div>
 									<div className="w-2/4 sm:w-full sm:text-center md:w-full md:text-center lg:w-full lg:text-center text-right">
 										<button
+											name="createaccount"
 											onClick={(e) => {
 												handleSubmit();
 												if (e.target.checked) {
