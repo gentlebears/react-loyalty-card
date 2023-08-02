@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+// Üstteki kod kapatıldı 02.08.2023
 
 const Button = (props) => {
 	return (

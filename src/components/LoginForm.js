@@ -22,20 +22,20 @@ export default function LoginForm({ handleSubmit, noEmail = false }) {
 		<motion.div
 			initial={{ opacity: 0, translateY: 25 }}
 			animate={{ opacity: 1, translateY: 0 }}
-			className="px-5"
+			className="px-5 dark:bg-gradient-to-tl dark:bg-neutral-900 dark:from-slate-900 dark:text-gray-300 transition-all duration-200 ease-in"
 		>
 			<form
 				className="max-w-xl h-screen2 content-center self-center items-center mx-auto grid gap-y-px py-4 "
 				onSubmit={handle}
 			>
-				<div className="p-10 rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)]">
+				<div className="p-10 rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)] transition-all duration-200 ease-in">
 					{!noEmail && (
 						<>
 							<h1 className="text-xl font-bold mb-4">
 								Giriş Yap
 							</h1>
 							<div>
-								<label className="block text-sm font-medium text-toy1">
+								<label className="block text-sm font-medium text-toy1 dark:text-slate-200 transition-all duration-200 ease-in">
 									E-Mail
 								</label>
 								<div className="mt-1">
@@ -54,7 +54,7 @@ export default function LoginForm({ handleSubmit, noEmail = false }) {
 						</>
 					)}
 					<div>
-						<label className="block text-sm font-medium text-toy1">
+						<label className="block text-sm font-medium text-toy1 dark:text-slate-200 transition-all duration-200 ease-in">
 							Password
 						</label>
 						<div className="mt-1">
@@ -72,7 +72,7 @@ export default function LoginForm({ handleSubmit, noEmail = false }) {
 					<div>
 						<Link
 							to="/forgot-password"
-							className="block text-sm font-medium text-toy1"
+							className="block text-sm font-medium text-toy1 dark:text-slate-200 transition-all duration-200 ease-in"
 						>
 							Şifreni mi Unuttun?
 						</Link>
