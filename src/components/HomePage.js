@@ -29,7 +29,7 @@ const HomePage = () => {
 			<section className="text-gray-600 body-font my-auto pb-20 lg:pb-0 md:pb-0 sm:pd-0">
 				<div className="container px-5 pt-5 md:pt-16 lg:pt-20 pb-5 mx-auto">
 					<div className="flex flex-col text-center w-full mb-5 md:mb-16 lg:mb-20">
-						<h1 className="text-2xl font-medium title-font mb-4 text-gray-900 sm:text-4xl lg:mb-0">
+						<h1 className="text-2xl font-medium title-font mb-4 text-gray-900 sm:text-4xl lg:mb-0 dark:text-slate-100">
 							Kampanya ve Fırsatlar
 						</h1>
 						{/* <p className='lg:w-2/3 mx-auto leading-relaxed text-base'>-Text Text Text-</p> */}
@@ -48,18 +48,18 @@ const HomePage = () => {
 									key={brand.id}
 									className="p-2 lg:p-4 md:p-4 w-1/2 lg:w-1/4 md:w-1/2 rounded-3xl"
 								>
-									<div className="h-full flex flex-col lg:items-center text-center shadow-lg rounded-3xl pb-1">
+									<div className="h-full flex flex-col lg:items-center text-center shadow-lg rounded-3xl pb-1 dark:shadow-zinc-800">
 										<Link to={"detail/" + brand.name}>
 											<img
 												alt={brand.name}
-												className="flex-shrink-0 object-cover rounded-t-3xl w-full h-48 sm:h-56 md:h-80 lg:h-96 object-center mb-4 shadow-lg"
+												className="flex-shrink-0 object-cover rounded-t-3xl w-full h-48 sm:h-56 md:h-80 lg:h-96 object-center mb-4 shadow-lg dark:shadow-zinc-800"
 												src={brand.logo}
 											/>
 										</Link>
 
 										<div className="w-full flex flex-row">
 											<div className="w-2/3 text-left ml-3">
-												<h2 className="title-font font-medium text-base md:text-lg lg:text-lg text-gray-900 truncate">
+												<h2 className="title-font font-medium text-base md:text-lg lg:text-lg text-gray-900 dark:text-slate-200 truncate">
 													{brand.name}
 												</h2>
 												<h3 className="text-gray-500 mb-3 text-sm md:text-base lg:text-base">

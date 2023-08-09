@@ -31,7 +31,7 @@ export default function Subscriber() {
 			<div className="px-5 py-4 pb-24 lg:pb-4 md:pb-4 sm:pb-4 self-center items-center">
 				<div className="max-w-5xl px-5 pt-5 md:pt-16 lg:pt-20 pb-5 mx-auto rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)]">
 					<div className="flex flex-col text-center w-full mb-5">
-						<h1 className="text-2xl font-medium title-font sm:mb-4 text-gray-900">
+						<h1 className="text-2xl font-medium title-font sm:mb-4 text-gray-900 dark:text-slate-100">
 							Abonelikler
 						</h1>
 						{/* <p className='lg:w-2/3 mx-auto leading-relaxed text-base'>-Text Text Text-</p> */}
@@ -51,14 +51,14 @@ export default function Subscriber() {
 										key={brand.id}
 										className="p-2 lg:w-1/2 w-full"
 									>
-										<div className="h-full flex items-center border-gray-200 border p-4 rounded-3xl">
+										<div className="h-full flex items-center border-gray-200 dark:border-zinc-800 border p-4 rounded-3xl">
 											<img
 												alt={brand.name}
-												className="border-gray-200 border w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-2xl mr-4 shadow-lg"
+												className="border-gray-200 border w-16 h-16 bg-gray-100 dark:border-zinc-800 object-cover object-center flex-shrink-0 rounded-2xl mr-4 shadow-lg dark:shadow-zinc-800"
 												src={brand.logo}
 											/>
 											<div className="flex-grow w-28">
-												<h2 className="text-gray-900 title-font font-medium">
+												<h2 className="text-gray-900 title-font font-medium dark:text-slate-200">
 													{brand.name}
 												</h2>
 												<p className="text-gray-500 text-sm">
@@ -82,9 +82,9 @@ export default function Subscriber() {
 													</div>
 												</div>
 											</div>
-											<div className="flex-grow my-auto mx-auto text-right">
+											<div className="flex-grow my-auto mx-auto text-right ">
 												{/* <Link to={'/qr'}> */}
-												<button className="text-gray-900 object-cover object-center text-3xl pt-1 rounded-lg mx-px h-12 w-12 border-gray-200 border">
+												<button className="text-gray-900 object-cover object-center text-3xl pt-1 rounded-lg mx-px h-12 w-12 border-gray-200 border dark:text-slate-200">
 													<ion-icon name="scan-outline"></ion-icon>
 												</button>
 												{/* </Link> */}

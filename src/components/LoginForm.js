@@ -22,7 +22,7 @@ export default function LoginForm({ handleSubmit, noEmail = false }) {
 		<motion.div
 			initial={{ opacity: 0, translateY: 25 }}
 			animate={{ opacity: 1, translateY: 0 }}
-			className="px-5 dark:bg-gradient-to-tl dark:bg-neutral-900 dark:from-slate-900 dark:text-gray-300 transition-all duration-200 ease-in"
+			className="px-5 dark:text-gray-300 transition-all duration-200 ease-in h-[90vh]"
 		>
 			<form
 				className="max-w-xl h-screen2 content-center self-center items-center mx-auto grid gap-y-px py-4 "
@@ -35,14 +35,14 @@ export default function LoginForm({ handleSubmit, noEmail = false }) {
 								Giriş Yap
 							</h1>
 							<div>
-								<label className="block text-sm font-medium text-toy1 dark:text-slate-200 transition-all duration-200 ease-in">
+								<label className="block text-sm font-medium text-toy1 dark:text-loy1text transition-all duration-200 ease-in">
 									E-Mail
 								</label>
 								<div className="mt-1">
 									<input
 										type="email"
 										name="email"
-										className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+										className="shadow-sm focus:ring-loy1 bg-orange-50 dark:bg-slate-100 dark:text-slate-900 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
 										placeholder="you@example.com"
 										value={email}
 										onChange={(e) =>
@@ -54,14 +54,14 @@ export default function LoginForm({ handleSubmit, noEmail = false }) {
 						</>
 					)}
 					<div>
-						<label className="block text-sm font-medium text-toy1 dark:text-slate-200 transition-all duration-200 ease-in">
+						<label className="block text-sm font-medium text-toy1 dark:text-loy1text transition-all duration-200 ease-in">
 							Password
 						</label>
 						<div className="mt-1">
 							<input
 								type="password"
 								autoComplete="on"
-								className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+								className="shadow-sm focus:ring-loy1 bg-orange-50 dark:bg-slate-100 dark:text-slate-900 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
 								placeholder="Password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
@@ -72,7 +72,7 @@ export default function LoginForm({ handleSubmit, noEmail = false }) {
 					<div>
 						<Link
 							to="/forgot-password"
-							className="block text-sm font-medium text-toy1 dark:text-slate-200 transition-all duration-200 ease-in"
+							className="block text-sm font-medium text-toy1 dark:text-loy1text transition-all duration-200 ease-in"
 						>
 							Şifreni mi Unuttun?
 						</Link>

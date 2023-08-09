@@ -18,7 +18,7 @@ const Qr = () => {
 			className="max-w-xl h-screen2 text-center font-buttonfont self-center items-center mx-auto grid gap-y-5 py-4 px-5"
 		>
 			<h1 className="text-5xl">{brands[rand].name}</h1>
-			<div className="text-white w-auto my-auto mx-auto py-10 px-9 shadow-lg">
+			<div className="text-white dark:bg-white w-auto my-auto mx-auto py-10 px-9 shadow-lg dark:shadow-slate-200/25">
 				<img alt={"QR - " + brands[rand].name} src={qr1} />
 			</div>
 		</motion.div>

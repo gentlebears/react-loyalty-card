@@ -32,7 +32,7 @@ export default function ForgotPassword() {
 				className="p-10 rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)]"
 			>
 				{/* <form onSubmit={handleEmail} className='max-w-xl mx-auto grid gap-y-4 py-4'> */}
-				<h1 className="text-xl font-bold mb-4">Şifreyi Sıfırla</h1>
+				<h1 className="text-xl font-bold mb-4 ">Şifreyi Sıfırla</h1>
 				<div>
 					<label className="block text-sm font-medium text-toy1">
 						E-Mail
@@ -43,7 +43,7 @@ export default function ForgotPassword() {
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							name="email"
-							className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+							className="shadow-sm focus:ring-loy1 dark:bg-slate-100 dark:text-slate-900 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
 							placeholder="you@example.com"
 						/>
 					</div>

@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import brands from "../components/Brands.json";
 import Error from "../pages/Error404";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 export const Detail = () => {
 	// const detail2 = this.props;
@@ -13,7 +14,7 @@ export const Detail = () => {
 
 	var useId = "fail";
 	// console.log(name);
-	let appname = "Card QR";
+	let appname = process.env.REACT_APP_NAME;
 
 	for (let i = 0; i < brands.length; i++) {
 		brands[i].name === name && (useId = [i]);
@@ -28,6 +29,13 @@ export const Detail = () => {
 				initial={{ opacity: 0, translateY: 25 }}
 				animate={{ opacity: 1, translateY: 0 }}
 			>
+				<Helmet>
+					<title>
+						{brands[useId].name +
+							" - " +
+							process.env.REACT_APP_NAME}
+					</title>
+				</Helmet>
 				<section className="text-gray-600 body-font lg:my-3 rounded-3xl pb-16 sm:pb-0">
 					<div className="container mx-auto flex px-5 py-0 sm:py-24 md:py-24 lg:py-24 md:flex-row flex-col items-center">
 						<div className="flex flex-col sm:flex-col md:flex-row lg:flex-row rounded-3xl shadow-lg py-5 lg:py-0 md:py-0 sm:py-0 ">
