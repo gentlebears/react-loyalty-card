@@ -34,7 +34,7 @@ export default function ForgotPassword() {
 				{/* <form onSubmit={handleEmail} className='max-w-xl mx-auto grid gap-y-4 py-4'> */}
 				<h1 className="text-xl font-bold mb-4 ">Şifreyi Sıfırla</h1>
 				<div>
-					<label className="block text-sm font-medium text-toy1">
+					<label className="block text-sm font-medium text-toy1 dark:text-loy1text">
 						E-Mail
 					</label>
 					<div className="mt-1">

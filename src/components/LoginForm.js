@@ -22,7 +22,7 @@ export default function LoginForm({ handleSubmit, noEmail = false }) {
 		<motion.div
 			initial={{ opacity: 0, translateY: 25 }}
 			animate={{ opacity: 1, translateY: 0 }}
-			className="px-5 dark:text-gray-300 transition-all duration-200 ease-in h-[90vh]"
+			className="px-5 dark:text-gray-300 h-[90vh]"
 		>
 			<form
 				className="max-w-xl h-screen2 content-center self-center items-center mx-auto grid gap-y-px py-4 "
@@ -42,7 +42,7 @@ export default function LoginForm({ handleSubmit, noEmail = false }) {
 									<input
 										type="email"
 										name="email"
-										className="shadow-sm focus:ring-loy1 bg-orange-50 dark:bg-slate-100 dark:text-slate-900 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+										className="shadow-sm focus:ring-loy1 bg-orange-50 dark:bg-slate-100 dark:text-zinc-900 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
 										placeholder="you@example.com"
 										value={email}
 										onChange={(e) =>
@@ -61,7 +61,7 @@ export default function LoginForm({ handleSubmit, noEmail = false }) {
 							<input
 								type="password"
 								autoComplete="on"
-								className="shadow-sm focus:ring-loy1 bg-orange-50 dark:bg-slate-100 dark:text-slate-900 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+								className="shadow-sm focus:ring-loy1 bg-orange-50 dark:bg-slate-100 dark:text-zinc-900 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
 								placeholder="Password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}

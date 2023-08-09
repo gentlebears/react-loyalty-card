@@ -42,14 +42,14 @@ export default function UpdateProfile() {
 				<form onSubmit={handleSubmit} className="grid">
 					<h1 className="text-xl font-bold mb-4">Profili Güncelle</h1>
 					<div>
-						<label className="block text-sm font-medium text-toy1">
+						<label className="block text-sm font-medium text-toy1 dark:text-loy1text">
 							Ad Soyad
 						</label>
 						<div className="mt-1">
 							<input
 								type="text"
 								name="text"
-								className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+								className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md dark:bg-slate-100 dark:text-zinc-900"
 								placeholder="John Doe"
 								value={displayName}
 								onChange={(e) => setdisplayName(e.target.value)}
@@ -58,14 +58,14 @@ export default function UpdateProfile() {
 					</div>
 
 					<div>
-						<label className="block text-sm font-medium text-toy1">
+						<label className="block text-sm font-medium text-toy1 dark:text-loy1text">
 							Fotoğraf
 						</label>
 						<div className="mt-1">
 							<input
 								type="text"
 								name="text"
-								className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+								className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md dark:bg-slate-100 dark:text-zinc-900"
 								placeholder="https://photo.url/"
 								value={avatar}
 								onChange={(e) => setAvatar(e.target.value)}
@@ -86,7 +86,7 @@ export default function UpdateProfile() {
 				<form onSubmit={handleResetSubmit} className="grid">
 					<h1 className="text-xl font-bold mb-4">Şifreyi Güncelle</h1>
 					<div>
-						<label className="block text-sm font-medium text-toy1">
+						<label className="block text-sm font-medium text-toy1 dark:text-loy1text">
 							Şifre
 						</label>
 						<div className="mt-1">
@@ -94,7 +94,7 @@ export default function UpdateProfile() {
 								type="password"
 								autoComplete="off"
 								name="password"
-								className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+								className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md dark:bg-slate-100 dark:text-zinc-900"
 								placeholder="Password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}

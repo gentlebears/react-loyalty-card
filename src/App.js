@@ -82,7 +82,9 @@ function App() {
 			{open && <Modal name={open} data={data} />}
 
 			<div className="dark:text-slate-100">
-				<Suspense fallback={<h1>Loading...</h1>}>
+				<Suspense
+					fallback={<h1 className="dark:text-white">Loading...</h1>}
+				>
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/subscriber" element={<Subscriber />} />

@@ -106,7 +106,7 @@ export default function Register() {
 								</div>
 
 								<div>
-									<label className="text-left block text-sm font-medium text-toy1 md:text-xs">
+									<label className="text-left block text-sm font-medium text-toy1 md:text-xs dark:text-loy1text">
 										E-Mail
 									</label>
 									<div className="mt-1">
@@ -114,7 +114,7 @@ export default function Register() {
 											type="email"
 											name="email"
 											autoComplete="on"
-											className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+											className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md dark:bg-slate-100 dark:text-zinc-900"
 											placeholder="you@example.com"
 											value={email}
 											onChange={(e) =>
@@ -124,14 +124,14 @@ export default function Register() {
 									</div>
 								</div>
 								<div>
-									<label className="text-left block text-sm font-medium text-toy1 md:text-xs">
+									<label className="text-left block text-sm font-medium text-toy1 md:text-xs dark:text-loy1text">
 										Password
 									</label>
 									<div className="mt-1">
 										<input
 											type="password"
 											autoComplete="on"
-											className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md"
+											className="shadow-sm focus:ring-loy1 bg-orange-50 focus:border-loy1 block w-full sm:text-sm border-loy2 rounded-md dark:bg-slate-100 dark:text-zinc-900"
 											placeholder="Password"
 											value={password}
 											onChange={(e) =>

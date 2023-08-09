@@ -36,21 +36,21 @@ export const Detail = () => {
 							process.env.REACT_APP_NAME}
 					</title>
 				</Helmet>
-				<section className="text-gray-600 body-font lg:my-3 rounded-3xl pb-16 sm:pb-0">
+				<section className="text-gray-600 body-font lg:my-3 rounded-3xl pb-16 sm:pb-0 dark:text-zinc-300">
 					<div className="container mx-auto flex px-5 py-0 sm:py-24 md:py-24 lg:py-24 md:flex-row flex-col items-center">
-						<div className="flex flex-col sm:flex-col md:flex-row lg:flex-row rounded-3xl shadow-lg py-5 lg:py-0 md:py-0 sm:py-0 ">
+						<div className="flex flex-col sm:flex-col md:flex-row lg:flex-row rounded-3xl shadow-lg py-5 lg:py-0 md:py-0 sm:py-0 dark:shadow-zinc-800">
 							<div className="h-full mx-auto lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
 								{/* <img className='object-cover object-center rounded' src='https://dummyimage.com/720x600' /> */}
 
 								{/* <img className='object-cover object-center rounded-3xl' src='https://i0.wp.com/www.habermuduru.com/wp-content/uploads/2021/03/kahve-dunyasi.png?fit=637%2C332&ssl=1' /> */}
 								<img
-									className="flex-shrink-0 rounded-3xl lg:rounded-l-3xl lg:rounded-r-none w-full h-48 sm:h-56 md:h-80 lg:h-96 object-cover object-center shadow-2xl"
+									className="flex-shrink-0 rounded-3xl lg:rounded-l-3xl lg:rounded-r-none w-full h-48 sm:h-56 md:h-80 lg:h-96 object-cover object-center shadow-2xl dark:shadow-lg dark:shadow-zinc-800"
 									alt={brands[useId].name}
 									src={brands[useId].logo}
 								/>
 							</div>
 							<div className="px-5 h-full my-auto lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-								<h1 className="title-font sm:text-4xl text-3xl mb-4 lg:mb-3 font-medium text-gray-900">
+								<h1 className="title-font sm:text-4xl text-3xl mb-4 lg:mb-3 font-medium text-zinc-900 dark:text-slate-100">
 									{brands[useId].name}
 									<br className="hidden lg:inline-block" />
 									{/* Kahve Dünyası Metin-2 */}
@@ -67,7 +67,7 @@ export const Detail = () => {
 									kalmadan işlemlerinizi yaparız.
 								</p>
 
-								<hr className="w-2/3 mx-auto pb-4 lg:pb-2" />
+								<hr className="w-2/3 mx-auto h-1 my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-zinc-800" />
 								<p className="text-sm mb-4">
 									Kampanya şartları öğrenmek için ilgili
 									şirketin sayfasına göz atabilirsiniz. İlgili

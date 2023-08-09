@@ -59,7 +59,7 @@ const HomePage = () => {
 
 										<div className="w-full flex flex-row">
 											<div className="w-2/3 text-left ml-3">
-												<h2 className="title-font font-medium text-base md:text-lg lg:text-lg text-gray-900 dark:text-slate-200 truncate">
+												<h2 className="title-font font-medium text-base md:text-lg lg:text-lg text-gray-900 dark:text-loy1text truncate">
 													{brand.name}
 												</h2>
 												<h3 className="text-gray-500 mb-3 text-sm md:text-base lg:text-base">
@@ -76,7 +76,7 @@ const HomePage = () => {
 														navigate("/");
 													}}
 													key={brand.id}
-													className="inline-flex cursor-pointer items-center p-3 border-2 text-lg rounded-full shadow-sm text-loy1 bg-white hover:bg-loy1 hover:text-white focus:outline-none focus-ring-2 focus ring-offset-2 transition-colors border-loy1 duration-200 ease-in"
+													className="inline-flex cursor-pointer items-center p-3 border-2 text-lg rounded-full shadow-sm dark:text-zinc-200 text-loy1 dark:bg-loy1 bg-white hover:dark:bg-zinc-50 hover:dark:text-loy1 hover:bg-loy1 hover:text-white focus:outline-none focus-ring-2 focus ring-offset-2 transition-colors dark:border-zinc-200 border-loy1 duration-200 ease-in"
 												>
 													<span className="flex scale-110">
 														<ion-icon
