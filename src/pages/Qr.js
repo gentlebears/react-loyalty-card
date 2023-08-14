@@ -1,4 +1,3 @@
-import React from "react";
 import qr1 from "../assets/qr/qr-code1.png";
 import brands from "../components/Brands.json";
 import { motion } from "framer-motion";
@@ -19,7 +18,11 @@ const Qr = () => {
 		>
 			<h1 className="text-5xl">{brands[rand].name}</h1>
 			<div className="text-white dark:bg-white w-auto my-auto mx-auto py-10 px-9 shadow-lg dark:shadow-slate-200/25">
-				<img alt={"QR - " + brands[rand].name} src={qr1} />
+				<img
+					className="w-[464px] aspect-square"
+					alt={"QR - " + brands[rand].name}
+					src={qr1}
+				/>
 			</div>
 		</motion.div>
 	);

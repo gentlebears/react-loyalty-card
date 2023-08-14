@@ -61,7 +61,7 @@ export default function Subscriber() {
 												<h2 className="text-gray-900 title-font font-medium dark:text-slate-200">
 													{brand.name}
 												</h2>
-												<p className="text-gray-500 text-sm">
+												<p className="text-gray-500 dark:text-gray-400 text-sm">
 													{brand.type}
 												</p>
 												{/* <p className='text-gray-500'>{brand.description}</p> */}
@@ -76,7 +76,7 @@ export default function Subscriber() {
 														<div className="text-red-300 w-1/2 font-normal border border-y-transparent border-l-transparent">
 															{brand.goal}
 														</div>
-														<div className="text-emerald-700 w-1/2 font-bold">
+														<div className="text-emerald-700 w-1/2 font-bold dark:text-emerald-300">
 															{brand.totalGoal}
 														</div>
 													</div>

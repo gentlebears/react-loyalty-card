@@ -33,7 +33,7 @@ export default function Register() {
 					{/* BANNER */}
 					<div className="flex items-center h-cheight w-cspacing rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)]">
 						{/* 1 Div */}
-						<div className="hidden bg-web-theme-color text-orange-50 xl:flex lg:flex md:flex sm:flex flex-col justify-center items-center w-2/5 h-full rounded-l-3xl py-2 px-5 shadow-[0px_0px_5px_0px_0px_5px_rgba(96,56,19,0.9)]">
+						<div className="hidden bg-web-theme-color dark:bg-web-theme-color3 text-orange-50 xl:flex lg:flex md:flex sm:flex flex-col justify-center items-center w-2/5 h-full rounded-l-3xl py-2 px-5 shadow-[0px_0px_5px_0px_0px_5px_rgba(96,56,19,0.9)]">
 							<h2 className="text-center mb-7 mx-1 text-3xl font-bold md:text-3xl lg:text-5xl">
 								Zaten Bir Hesabınız Var mı?
 							</h2>
@@ -59,12 +59,12 @@ export default function Register() {
 						{/* 2 Div */}
 						<div className="flex flex-col justify-center items-center h-full w-full xl:w-3/5 lg:w-3/5 md:w-3/5 sm:w-3/5 rounded-r-3xl px-5 py-0 text-loy1">
 							<form id="form" name="form" onSubmit={handleSubmit}>
-								<h2 className="text-center font-bold text-4xl lg:text-5xl md:text-3xl lg:font-extrabold">
+								<h2 className="text-center font-bold text-4xl lg:text-5xl md:text-3xl lg:font-extrabold dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r from-loy1 to-[#5a4d43]">
 									Hesap Oluşturun
 								</h2>
 								{/* SOCIAL BUTTONS */}
 								<div className="flex flex-col justify-center items-center mt-8 md:mt-2 lg:mt-2">
-									<p className="text-lg mb-4 md:mb-1 font-semibold">
+									<p className="text-lg mb-4 md:mb-1 font-semibold dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r from-loy1 to-[#5a4d43]">
 										Sosyal ağlar ile kayıt olun
 									</p>
 									<div className="flex justify-center items-center">
@@ -75,16 +75,16 @@ export default function Register() {
 											name="Google"
 											className="flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1"
 										>
-											<i className="fa-brands fa-google"></i>
+											<ion-icon name="logo-google"></ion-icon>
 										</button>
 										<button
 											type="submit"
 											aria-label="facebook"
 											id="facebook"
 											name="Facebook"
-											className="flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1"
+											className="flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1 "
 										>
-											<i className="fab fa-facebook-f"></i>
+											<ion-icon name="logo-facebook"></ion-icon>
 										</button>
 										<button
 											type="submit"
@@ -93,16 +93,18 @@ export default function Register() {
 											name="Twitter"
 											className="flex justify-center items-center cursor-pointer rounded-full text-center w-11 h-11 mx-5 my-0 text-xl border-2 hover:text-white border-loy1 transition-colors hover:bg-loy1 text-loy1"
 										>
-											<i className="fa-brands fa-twitter"></i>
+											<ion-icon name="logo-twitter"></ion-icon>
 										</button>
 									</div>
 								</div>
 
 								{/* SEPERATOR */}
 								<div className="flex justify-center items-center w-full my-0 mx-auto">
-									<div className="w-2/5 h-px bg-loy1 my-0 mx-5"></div>
-									<p>or</p>
-									<div className="w-2/5 h-px bg-loy1 my-0 mx-5"></div>
+									<div className="w-2/5 h-px bg-loy1 my-0 mx-5 dark:bg-gradient-to-r from-loy1 to-[#68462b]"></div>
+									<p className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r from-loy1 to-[#68462b]">
+										or
+									</p>
+									<div className="w-2/5 h-px bg-loy1 my-0 mx-5 dark:bg-gradient-to-r from-[#634a35] to-[#5a4d43]"></div>
 								</div>
 
 								<div>
