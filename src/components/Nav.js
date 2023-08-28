@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "./Button";
 import Theme from "./Theme";
 import { Link } from "react-router-dom";

@@ -1,4 +1,4 @@
-import { forgotPassword, auth } from "../firebase";
+import { forgotPassword } from "../firebase";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";

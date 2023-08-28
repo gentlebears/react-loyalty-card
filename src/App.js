@@ -1,20 +1,20 @@
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Modal from "./components/Modal";
 // import Home from './pages/Home';
 // import Login from './pages/Login';
 // import Register from './pages/Register';
-import { useSelector } from "react-redux";
 // import Settings from './pages/Settings';
 // import Subscriber from './pages/Subscriber';
 // import ForgotPassword from './pages/ForgotPassword';
-import Nav from "./components/Nav";
-import { Detail } from "./pages/Detail";
-import Navigation from "./components/Navigation";
 // import Error from './pages/Error404';
 // import Qr from './pages/Qr';
 // import Profile from './pages/Profile';
+import { useSelector } from "react-redux";
+import Nav from "./components/Nav";
+import { Detail } from "./pages/Detail";
+import Navigation from "./components/Navigation";
 import { Helmet } from "react-helmet";
 
 const Home = lazy(() => import("./pages/Home"));

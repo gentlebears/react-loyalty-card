@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useParams } from "react-router-dom";
 import brands from "../components/Brands.json";
 import Error from "../pages/Error404";

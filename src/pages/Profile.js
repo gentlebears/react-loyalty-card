@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -13,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { modal } from "../utils";
 import { motion } from "framer-motion";
+import userPhoto from "../assets/logo/userphoto.webp";
 
 // AUTO ANIMATE
 import { useAutoAnimate } from "@formkit/auto-animate/react";
@@ -88,9 +88,10 @@ const Profile = () => {
 									src={
 										user.photoURL
 											? user.photoURL
-											: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+											: userPhoto
 									}
 									className="w-24 h-24 shadow-lg rounded-full"
+									alt="User Photo"
 								/>
 								{/* TEXT */}
 								<div className="flex-row font-buttonfont mr-auto ml-5 content-center self-center">

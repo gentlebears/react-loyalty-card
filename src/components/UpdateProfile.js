@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { update, resetPassword, auth } from "../firebase";
+import { update, resetPassword } from "../firebase";
 import { useSelector } from "react-redux";
 import { setUserData } from "../utils";
 import { motion } from "framer-motion";
