@@ -1,23 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function Theme() {
 	const options = [
 		{
-			icon: 'sunny',
-			text: 'light',
+			icon: "sunny",
+			text: "light",
 		},
 		{
-			icon: 'moon',
-			text: 'dark',
+			icon: "moon",
+			text: "dark",
 		},
 		{
-			icon: 'desktop-outline',
-			text: 'system',
+			icon: "desktop-outline",
+			text: "system",
 		},
 	];
-	const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'system');
+	const [theme, setTheme] = useState(
+		localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
+	);
 	const element = document.documentElement;
-	const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+	const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
 	// useEffect(() => {
 	// 	if (window.matchMedia('(prefers-color-scheme: dark).matches')) {
@@ -40,41 +42,40 @@ export default function Theme() {
 	// const handleThemeSwitch = () => {
 	// 	setTheme(theme === 'dark' ? 'light' : 'dark');
 	// };
-	function onWinwowMatch() {
-		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches)) {
-			element.classList.add('dark');
-		} else {
-			element.classList.remove('dark');
-		}
+	function onWindowMatch() {
+		localStorage.theme === "dark" ||
+		(!("theme" in localStorage) && darkQuery.matches)
+			? element.classList.add("dark")
+			: element.classList.remove("dark");
 	}
 
-	onWinwowMatch();
+	onWindowMatch();
 	useEffect(() => {
 		switch (theme) {
-			case 'dark':
-				element.classList.add('dark');
-				localStorage.setItem('theme', 'dark');
+			case "dark":
+				element.classList.add("dark");
+				localStorage.setItem("theme", "dark");
 				break;
-			case 'light':
-				element.classList.remove('dark');
-				localStorage.setItem('theme', 'light');
+			case "light":
+				element.classList.remove("dark");
+				localStorage.setItem("theme", "light");
 				break;
 
 			default:
-				localStorage.removeItem('theme');
-				onWinwowMatch();
+				localStorage.removeItem("theme");
+				onWindowMatch();
 				break;
 		}
 	}, [theme]);
 	return (
 		<>
-			<div className='hidden sm:hidden md:hidden lg:flex flex-row top-5 right-10 dark:bg-slate:800 bg-gray-200 dark:bg-zinc-800 rounded transition-all duration-500 ease-in'>
+			<div className="hidden sm:hidden md:hidden lg:flex flex-row top-5 right-10 dark:bg-slate:800 bg-gray-200 dark:bg-zinc-800 rounded transition-all duration-500 ease-in">
 				{options.map((opt) => (
 					<button
 						key={opt.text}
 						onClick={() => setTheme(opt.text)}
 						className={`w-8 h-8 leading-9 text-xl rounded-full m-1 
-					${theme === opt.text && 'text-sky-600'}
+					${theme === opt.text && "text-sky-600"}
 					`}
 					>
 						<ion-icon name={opt.icon}></ion-icon>
