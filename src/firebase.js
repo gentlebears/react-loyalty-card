@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 // NEW PROJECT-
 import {
+	GoogleAuthProvider,
 	getAuth,
 	sendPasswordResetEmail,
 	createUserWithEmailAndPassword,
@@ -49,6 +50,8 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 // export const user = auth.currentUser;
 export const db = getFirestore(app);
+
+export const providerGoogle = new GoogleAuthProvider();
 
 export const register = async (email, password) => {
 	try {

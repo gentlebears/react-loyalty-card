@@ -1,4 +1,5 @@
-import { register } from "../firebase";
+import { register, auth, providerGoogle } from "../firebase";
+import { signInWithPopup } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -8,6 +9,15 @@ export default function Register() {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [googleValue, setGoogleValue] = useState("");
+
+	const handleClickGoogle = (e) => {
+		signInWithPopup(auth, providerGoogle).then((data) => {
+			setGoogleValue(data.user.email);
+			localStorage.setItem("email", data.user.email);
+			navigate("/login");
+		});
+	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -18,6 +28,10 @@ export default function Register() {
 	const hideshow = localStorage.getItem("user");
 	useEffect(() => {
 		if (hideshow) navigate("/profile");
+	});
+
+	useEffect(() => {
+		setGoogleValue(localStorage.getItem("email"));
 	});
 
 	if (!hideshow) {
@@ -69,6 +83,7 @@ export default function Register() {
 									</p>
 									<div className="flex justify-center items-center">
 										<button
+											onClick={handleClickGoogle}
 											type="submit"
 											aria-label="google"
 											id="google"
