@@ -84,7 +84,7 @@ export default function Register() {
 									<div className="flex justify-center items-center">
 										<button
 											onClick={handleClickGoogle}
-											type="submit"
+											type="button"
 											aria-label="google"
 											id="google"
 											name="Google"
@@ -93,7 +93,8 @@ export default function Register() {
 											<ion-icon name="logo-google"></ion-icon>
 										</button>
 										<button
-											type="submit"
+											onClick={handleClickFacebook}
+											type="button"
 											aria-label="facebook"
 											id="facebook"
 											name="Facebook"
@@ -102,7 +103,8 @@ export default function Register() {
 											<ion-icon name="logo-facebook"></ion-icon>
 										</button>
 										<button
-											type="submit"
+											onClick={handleClickTwitter}
+											type="button"
 											aria-label="twitter"
 											id="twitter"
 											name="Twitter"
