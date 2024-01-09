@@ -73,8 +73,8 @@ const Nav = () => {
 							<Link to={"/register"}>
 								<Button>Kayıt Ol</Button>
 							</Link>
-						</li>
-						<li className="bg-transparent flex text-white font-[Poppins] py-2 px-6 rounded md:ml-8 hover:bg-transparent duration-200">
+						</div>
+						<div className='bg-transparent flex text-white font-[Poppins] py-2 px-6 rounded md:ml-8 hover:bg-transparent duration-500'>
 							<Theme />
 						</li>
 					</ul>
