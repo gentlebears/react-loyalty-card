@@ -1,4 +1,10 @@
-import { register, auth, providerGoogle } from "../firebase";
+import {
+	register,
+	auth,
+	providerGoogle,
+	providerTwitter,
+	providerFacebook,
+} from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,12 +15,21 @@ export default function Register() {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [googleValue, setGoogleValue] = useState("");
 
 	const handleClickGoogle = (e) => {
 		signInWithPopup(auth, providerGoogle).then((data) => {
-			setGoogleValue(data.user.email);
-			localStorage.setItem("email", data.user.email);
+			navigate("/login");
+		});
+	};
+
+	const handleClickTwitter = (e) => {
+		signInWithPopup(auth, providerTwitter).then((data) => {
+			navigate("/login");
+		});
+	};
+
+	const handleClickFacebook = (e) => {
+		signInWithPopup(auth, providerFacebook).then((user) => {
 			navigate("/login");
 		});
 	};
@@ -28,10 +43,6 @@ export default function Register() {
 	const hideshow = localStorage.getItem("user");
 	useEffect(() => {
 		if (hideshow) navigate("/profile");
-	});
-
-	useEffect(() => {
-		setGoogleValue(localStorage.getItem("email"));
 	});
 
 	if (!hideshow) {

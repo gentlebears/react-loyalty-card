@@ -2,6 +2,8 @@ import { initializeApp } from "firebase/app";
 // NEW PROJECT-
 import {
 	GoogleAuthProvider,
+	TwitterAuthProvider,
+	FacebookAuthProvider,
 	getAuth,
 	sendPasswordResetEmail,
 	createUserWithEmailAndPassword,
@@ -52,6 +54,8 @@ export const auth = getAuth();
 export const db = getFirestore(app);
 
 export const providerGoogle = new GoogleAuthProvider();
+export const providerTwitter = new TwitterAuthProvider();
+export const providerFacebook = new FacebookAuthProvider();
 
 export const register = async (email, password) => {
 	try {
