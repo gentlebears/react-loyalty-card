@@ -29,7 +29,7 @@ export default function Register() {
 	};
 
 	const handleClickFacebook = (e) => {
-		signInWithPopup(auth, providerFacebook).then((user) => {
+		signInWithPopup(auth, providerFacebook).then((data) => {
 			navigate("/login");
 		});
 	};

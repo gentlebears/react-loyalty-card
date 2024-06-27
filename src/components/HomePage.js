@@ -71,7 +71,7 @@ const HomePage = () => {
 													onClick={() => {
 														brand.like =
 															!brand.like;
-														console.log(brand.like);
+														// console.log(brand.like);
 														navigate("/");
 													}}
 													key={brand.id}

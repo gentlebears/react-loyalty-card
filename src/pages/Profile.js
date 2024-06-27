@@ -95,7 +95,9 @@ const Profile = () => {
 								/>
 								{/* TEXT */}
 								<div className="flex-row font-buttonfont mr-auto ml-5 content-center self-center">
-									<div className="">{user.displayName}</div>
+									<div className="dark:text-gray-700">
+										{user.displayName}
+									</div>
 									<div className="text-xs text-gray-400">
 										User
 									</div>
