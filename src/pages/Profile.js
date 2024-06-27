@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { modal } from "../utils";
 import { motion } from "framer-motion";
 import userPhoto from "../assets/logo/userphoto.webp";
+import { Helmet } from "react-helmet";
 
 // AUTO ANIMATE
 import { useAutoAnimate } from "@formkit/auto-animate/react";
@@ -79,6 +80,11 @@ const Profile = () => {
 				animate={{ opacity: 1, translateY: 0 }}
 				className="my-auto"
 			>
+				<Helmet>
+					<title>
+						{user.displayName + " - " + process.env.REACT_APP_NAME}
+					</title>
+				</Helmet>
 				<div className="px-5  py-4 pb-24 lg:pb-4 md:pb-4 sm:pb-4 self-center items-center">
 					<div className="max-w-5xl px-5 pt-5 md:pt-16 lg:pt-20 pb-5 mx-auto rounded-3xl shadow-[0px_0px_5px_rgba(109,56,19,0.9)]">
 						<div className="flex w-full gap-x-4 items-center self-center content-center">
@@ -91,7 +97,7 @@ const Profile = () => {
 											: userPhoto
 									}
 									className="w-24 h-24 shadow-lg rounded-full"
-									alt="User Photo"
+									alt={user.displayName + " Photo"}
 								/>
 								{/* TEXT */}
 								<div className="flex-row font-buttonfont mr-auto ml-5 content-center self-center">

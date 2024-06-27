@@ -60,6 +60,10 @@ function App() {
 			name: "Şifremi Unuttum",
 			navigate: "/forgot-password",
 		},
+		// {
+		// 	name: "Profil",
+		// 	navigate: "/profile",
+		// },
 	];
 	let defaultTitle = "Opss!";
 	Menus.forEach((menu, i) => {
